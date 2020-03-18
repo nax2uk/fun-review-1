@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 const makePizza = require('../challenges/4-pizza-shop');
-/*
+
 describe('makePizza()', () => {
   it('invokes callback with empty string when passed an empty string', (done) => {
     makePizza('', (err, delivery) => {
@@ -15,4 +15,3 @@ describe('makePizza()', () => {
     });
   });
 });
-*/

@@ -52,6 +52,12 @@ describe('VendingMachine', () => {
       testMachine.addCredit(50);
       expect(testMachine.credit).to.equal(50);
     });
+    it('increases credit in vending machine', () => {
+      const testMachine = new VendingMachine();
+      testMachine.addCredit(50);
+      testMachine.addCredit(50);
+      expect(testMachine.credit).to.equal(100);
+    });
   });
   describe('---purchaseItem', () => {
     it('returns vending machine with an purchaseItem method', () => {

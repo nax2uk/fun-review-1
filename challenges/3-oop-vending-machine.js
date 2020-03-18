@@ -8,7 +8,7 @@ class VendingMachine {
   }
 
   addCredit(credit) {
-    this.credit = credit;
+    this.credit += credit;
   }
   purchaseItem(row) {
     if (this.credit > this.stock[row].price) {
