@@ -86,6 +86,17 @@ describe('VendingMachine', () => {
       testMachine.purchaseItem('A');
       expect(testMachine.stock['A'].quantity).to.equal(6);
     });
+    it('decreases the amount of credit if item purchased', () => {
+      const marsBars = { name: 'marsBar', price: 50, quantity: 6 };
+      const testMachine = new VendingMachine();
+      testMachine.addStock(marsBars, 'A');
+
+      testMachine.addCredit(80);
+      testMachine.purchaseItem('A');
+      expect(testMachine.credit).to.equal(30);
+      testMachine.addCredit(5);
+      expect(testMachine.credit).to.equal(35);
+    });
     it('console log insufficient funds if credit is less than price of item', () => {
       spy(console, 'log');
 

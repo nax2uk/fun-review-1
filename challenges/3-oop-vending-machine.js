@@ -14,6 +14,7 @@ class VendingMachine {
     if (this.credit > this.stock[row].price) {
       console.log(this.stock[row].name);
       this.stock[row].quantity--;
+      this.credit -= this.stock[row].price;
     } else console.log('Insufficent credit!');
   }
 }
