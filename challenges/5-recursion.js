@@ -1,8 +1,3 @@
-// returns [ ["name", "Sam"] ]
-//deeplyEntries({ name: 'Sam' });
-//deepEntries({ name: 'Sam', favBook: 'Blood Meridian' });
-// returns [ ["name", "Sam"], ["favBook", "Blood Meridian"] ]
-
 const deepEntries = (obj) => {
   let arrOfArrKeyValues = [];
   for (let key in obj)

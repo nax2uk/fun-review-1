@@ -16,17 +16,6 @@ class VendingMachine {
       this.stock[row].quantity--;
     } else console.log('Insufficent credit!');
   }
-  //testMachine.addStock(marsBars, 'A')
-  /**
-{ A: { name: 'marsBar', price: 50, quantity: 6 },
-  B: {},
-  C: {} }
-**/
-
-  //testMachine.addCredit(30);
-  // addCredit();
-  //testMachine.purchaseItem('A')
-  // purchaseItem();
 }
 
 module.exports = { VendingMachine };
