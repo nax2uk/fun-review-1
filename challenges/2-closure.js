@@ -12,7 +12,9 @@ const invert = (func) => {
 
 const flip = (func) => {
   function flipArgs(...args) {
-    return func(...args.reverse());
+    //copy elements into a new array before calling reverse which will mutate the original args array
+    let newArgs = [...args];
+    return func(...newArgs.reverse());
   }
   return flipArgs;
 };
