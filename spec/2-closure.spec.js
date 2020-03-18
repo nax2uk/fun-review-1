@@ -46,7 +46,7 @@ describe('invert', () => {
     expect(isLessThanOrEqualTo100(100, 1, 1, 1)).to.equal(!isBiggerThan100(100, 1, 1, 1));
   });
 });
-/*
+
 describe('flip', () => {
   it('returns a new function', () => {
     const originalFunc = function() {};
@@ -77,7 +77,7 @@ describe('flip', () => {
     expect(originalFunc.args[0]).to.eql([5, 4, 3, 2, 1]);
     originalFunc = spy();
     flippedOriginalFunc = flip(originalFunc);
-    flippedOriginalFunc('hello','northcoders',42,100,2019);
+    flippedOriginalFunc('hello', 'northcoders', 42, 100, 2019);
     expect(originalFunc.args[0]).to.eql([2019, 100, 42, 'northcoders', 'hello']);
   });
   it('new function returns invocation of original func', () => {
@@ -88,12 +88,12 @@ describe('flip', () => {
     expect(actual).to.equal(expected);
     let joinChars = (...letters) => letters.join('-');
     let flipJoin = flip(joinChars);
-    actual = flipJoin('a','b','c','d','e');
+    actual = flipJoin('a', 'b', 'c', 'd', 'e');
     expected = 'e-d-c-b-a';
     expect(actual).to.equal(expected);
   });
 });
-
+/*
 describe('rememberMe', () => {
   it('returns a new function', () => {
     expect(rememberMe()).to.be.a('function');
