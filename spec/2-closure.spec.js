@@ -1,35 +1,35 @@
 const { expect } = require('chai');
 const { invert, flip, rememberMe } = require('../challenges/2-closure');
 const { spy } = require('sinon');
-
-/*describe('invert', () => {
+/*
+describe('invert', () => {
   it('returns a new function', () => {
     const originalFunc = function() {};
     const invertedOriginalFunc = invert(originalFunc);
     expect(invertedOriginalFunc).to.be.a('function');
     expect(invertedOriginalFunc).to.not.equal(originalFunc);
   });
-  it("new function's first argument is passed to the original function",() => {
+  it("new function's first argument is passed to the original function", () => {
     let originalFunc = spy();
     let invertedOriginalFunc = invert(originalFunc);
     invertedOriginalFunc('a');
     expect(originalFunc.args[0]).to.eql(['a']);
-  })
+  });
   it("new function's first 2 arguments are passed to the original function", () => {
     let originalFunc = spy();
     let invertedOriginalFunc = invert(originalFunc);
     invertedOriginalFunc(1, 2);
     expect(originalFunc.args[0]).to.eql([1, 2]);
   });
-  it("all of the new function's arguments are passed to the original function",() => {
+  it("all of the new function's arguments are passed to the original function", () => {
     let originalFunc = spy();
     let invertedOriginalFunc = invert(originalFunc);
     invertedOriginalFunc(1, 2, 3, 4, 5);
     expect(originalFunc.args[0]).to.eql([1, 2, 3, 4, 5]);
     originalFunc = spy();
     invertedOriginalFunc = invert(originalFunc);
-    invertedOriginalFunc('a','c','hello',1,2);
-    expect(originalFunc.args[0]).to.eql(['a','c','hello',1,2]);
+    invertedOriginalFunc('a', 'c', 'hello', 1, 2);
+    expect(originalFunc.args[0]).to.eql(['a', 'c', 'hello', 1, 2]);
   });
   it('new function returns negated invocation of the original function', () => {
     let returnsFalse = () => false;
@@ -46,7 +46,7 @@ const { spy } = require('sinon');
     expect(isLessThanOrEqualTo100(100, 1, 1, 1)).to.equal(!isBiggerThan100(100, 1, 1, 1));
   });
 });
-
+/*
 describe('flip', () => {
   it('returns a new function', () => {
     const originalFunc = function() {};
