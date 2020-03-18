@@ -1,5 +1,6 @@
 const { expect } = require('chai');
-const { removeAgents, makeNameTags } = require('../challenges/1-human-resources.js');
+const { removeAgents, makeNameTags, createPoll } = require('../challenges/1-human-resources.js');
+const NCFruitBowl = require('../data/challenge1-data.js');
 
 describe('#removeAgents', () => {
   it('checks that function returns an array', () => {
@@ -10,6 +11,13 @@ describe('#removeAgents', () => {
   it('checks that function returns an empty array when passed an empty array', () => {
     const inputArray = [];
     expect(removeAgents(inputArray)).to.eql([]);
+  });
+  it('checks that function does not mutate input array', () => {
+    const inputArray = [{ name: 'Sam', profession: 'artist' }];
+    const controlArray = [{ name: 'Sam', profession: 'artist' }];
+    removeAgents(inputArray);
+
+    expect(inputArray).to.eql(controlArray);
   });
   it('checks that function returns a new array', () => {
     const inputArray = [{ name: 'Sam', profession: 'artist' }];
@@ -72,6 +80,29 @@ describe('#makeNameTags', () => {
     const inputArray = [];
     expect(makeNameTags(inputArray)).to.eql([]);
   });
+  it('checks that function does not mutate input array', () => {
+    const inputArray = [
+      {
+        title: 'Mr',
+        forename: 'Sam',
+        surname: 'Caine',
+        age: 30,
+        company: 'Northcoders',
+      },
+    ];
+    const controlArray = [
+      {
+        title: 'Mr',
+        forename: 'Sam',
+        surname: 'Caine',
+        age: 30,
+        company: 'Northcoders',
+      },
+    ];
+    makeNameTags(inputArray);
+
+    expect(inputArray).to.eql(controlArray);
+  });
 
   it('checks that function returns a new array', () => {
     const inputArray = [
@@ -127,5 +158,39 @@ describe('#makeNameTags', () => {
       'Mr Beyazid Kocak, MGS',
       'Mrs Samantha Jones, British Gas',
     ]);
+  });
+});
+
+describe('#createPoll', () => {
+  it('checks that function returns an object', () => {
+    const inputArrItems = ['cake', 'biscuit', 'biscuit'];
+    expect(createPoll(inputArrItems)).to.be.an('object');
+  });
+
+  it('checks that function returns an empty object when passed an empty array', () => {
+    const inputArrItems = [];
+    expect(createPoll(inputArrItems)).to.eql({});
+  });
+
+  it('checks that function does not mutate input array', () => {
+    const inputArrItems = ['cake', 'biscuit', 'biscuit'];
+    const controlArr = ['cake', 'biscuit', 'biscuit'];
+    createPoll(inputArrItems);
+    expect(inputArrItems).to.eql(controlArr);
+  });
+
+  it('checks that function returns correct object when passed an array of string items', () => {
+    let inputArrItems = ['cake', 'biscuit', 'biscuit'];
+    expect(createPoll(inputArrItems)).to.eql({ cake: 1, biscuit: 2 });
+
+    inputArrItems = ['dog', 'dog', 'dog'];
+    expect(createPoll(inputArrItems)).to.eql({ dog: 3 });
+    expect(createPoll(NCFruitBowl)).to.eql({
+      apple: 276,
+      pear: 223,
+      banana: 263,
+      orange: 238,
+      'lonesome plum': 1,
+    });
   });
 });

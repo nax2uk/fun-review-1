@@ -10,8 +10,13 @@ function makeNameTags(arrOfObjGuests) {
   );
 }
 
-// 3
+function createPoll(arrOfStrItems) {
+  const objCountItems = {};
+  arrOfStrItems.forEach((strItem) => {
+    if (objCountItems.hasOwnProperty(strItem)) objCountItems[strItem]++;
+    else objCountItems[strItem] = 1;
+  });
+  return objCountItems;
+}
 
-function createPoll(items) {}
-
-module.exports = { removeAgents, makeNameTags };
+module.exports = { removeAgents, makeNameTags, createPoll };
