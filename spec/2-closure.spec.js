@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { invert, flip, rememberMe } = require('../challenges/2-closure');
 const { spy } = require('sinon');
-/*
+
 describe('invert', () => {
   it('returns a new function', () => {
     const originalFunc = function() {};
@@ -119,5 +119,4 @@ describe('rememberMe', () => {
     expect(rememberSpiedAdder(1, 2, 3, 4, 6)).to.equal(16);
     expect(spiedAdder.callCount).to.equal(2);
   });
-});
-*/
+});*/
